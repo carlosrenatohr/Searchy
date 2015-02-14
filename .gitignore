@@ -32,5 +32,4 @@ proguard/
 
 # Log Files
 *.log
-*.sqlite
 
