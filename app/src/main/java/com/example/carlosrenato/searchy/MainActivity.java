@@ -36,11 +36,7 @@ public class MainActivity extends ActionBarActivity implements SearchView.OnQuer
         h1.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_launcher, 0, 0, 0);
         ds = new ClientesDataSource(this);
         ds.open();
-        List<Cliente> values = ds.getAll("");
-
-        ArrayAdapter<Cliente> adapter = new ArrayAdapter<Cliente>(this, android.R.layout.simple_list_item_1, values);
-        list = (ListView) findViewById(R.id.list2);
-        list.setAdapter(adapter);
+        showList("");
     }
 
     @Override
@@ -63,7 +59,7 @@ public class MainActivity extends ActionBarActivity implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextSubmit (String query){
-        showList(query + "*");
+        showList(query);
         return false;
     }
 
@@ -89,7 +85,7 @@ public class MainActivity extends ActionBarActivity implements SearchView.OnQuer
 //                    R.id.tvAddress,
 //                    R.id.tvNumber};
             // Create a simple cursor adapter for the definitions and apply them to the ListView
-            List<Cliente> values = ds.getAll(query);
+            final List<Cliente> values = ds.getAll(query);
 
             ArrayAdapter<Cliente> adapter = new ArrayAdapter<Cliente>(this, android.R.layout.simple_list_item_1, values);
             list = (ListView) findViewById(R.id.list2);
@@ -100,33 +96,36 @@ public class MainActivity extends ActionBarActivity implements SearchView.OnQuer
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get the cursor, positioned to the corresponding row in the result set
 //                Cursor cursor = (Cursor) list.getItemAtPosition(position);
-                Log.d("pisiton", new Integer(position).toString());
-
 //                Cursor cursor = ds.filtering(query);
+                Cursor cursor = ds.getAll();
+                cursor.moveToPosition(position);
 
 
                 // Get the state's capital from this row in the database.
-//                int item = cursor.getInt(cursor.getColumnIndexOrThrow("ITEM"));
-//                String name = cursor.getString(cursor.getColumnIndexOrThrow("NOMBRE"));
-//                String address = cursor.getString(cursor.getColumnIndexOrThrow("DIRECCION"));
-//                String number = cursor.getString(cursor.getColumnIndexOrThrow("NUMERO"));
-//
+                String item = cursor.getString(cursor.getColumnIndexOrThrow("ITEM"));
+                String name = cursor.getString(cursor.getColumnIndexOrThrow("NOMBRE"));
+                String address = cursor.getString(cursor.getColumnIndexOrThrow("DIRECCION"));
+                String number = cursor.getString(cursor.getColumnIndexOrThrow("NUMERO"));
+                int count = values.size();
+                cursor.close();
 //                //Get References to the TextViews
-//                TextView tvItem = (TextView) findViewById(R.id.tvItem);
-//                TextView tvName = (TextView) findViewById(R.id.tvName);
-//                TextView tvAddress = (TextView) findViewById(R.id.tvAddress);
-//                TextView tvNumber = (TextView) findViewById(R.id.tvNumber);
+                TextView tvItem = (TextView) findViewById(R.id.tvItem);
+                TextView tvName = (TextView) findViewById(R.id.tvName);
+                TextView tvAddress = (TextView) findViewById(R.id.tvAddress);
+                TextView tvNumber = (TextView) findViewById(R.id.tvNumber);
+                TextView tvClientsCount = (TextView) findViewById(R.id.clientsCount);
 //
 //                // Update the parent class's TextView
-//                tvItem.setText(item);
-//                tvName.setText(name);
-//                tvAddress.setText(address);
-//                tvNumber.setText(number);
-                filter.setQuery("", true);
+                tvItem.setText(item);
+                tvName.setText(name);
+                tvAddress.setText(address);
+                tvNumber.setText(number);
+                tvClientsCount.setText("Mostrando "+ count + " clientes");
+//                filter.setQuery("", true);
             }
         });
 
-//            SimpleCursorAdapter customers = new SimpleCursorAdapter(this, R.layout.activity_main, cursor, from, to);
+//            SimpleCursorAdapter customers = new SimpleCursorA dapter(this, R.layout.activity_main, cursor, from, to);
 //            list.setAdapter(customers);
 //        }
         }

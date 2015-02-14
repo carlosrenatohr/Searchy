@@ -48,126 +48,142 @@
             android:layout_weight="1"
             android:background="@drawable/shadow_list">
         </ListView>
-        <TableLayout
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:layout_weight="1.6"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
-            android:background="#449988"
-            android:layout_marginBottom="50dp">
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="20dp">
+            android:orientation="vertical">
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="ITEM: "
-                android:layout_weight="1"
-                android:gravity="left"
-                android:textColor="#fff"/>
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="5dp">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="358"
-                android:textStyle="bold"
-                android:textSize="8pt"
-                android:layout_weight="1"
+                android:id="@+id/clientsCount"
+                android:background="@color/background_material_dark"
+                android:textColor="@color/abc_primary_text_material_dark"
+                android:textSize="20dp"
+                android:layout_margin="5dp"
                 android:gravity="center_horizontal"
-                android:id="@+id/tvItem"
-                android:textColor="#fff"/>
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
+                android:text="Clientes total "/>
+            <TableLayout
                 android:layout_width="fill_parent"
-                android:layout_marginTop="30dp">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="NOMBRE: "
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
                 android:layout_weight="1"
-                android:gravity="left"
-                android:textColor="#fff"/>
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="5dp">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Carlos Hernandez"
-                android:textStyle="bold"
-                android:textSize="8pt"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:id="@+id/tvName"
-                android:textColor="#fff"/>
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="30dp">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="DIRECCION: "
-                android:layout_weight="1"
-                android:gravity="left"
-                android:textColor="#fff"/>
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="5dp">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Unidad de Propositos"
-                android:textStyle="bold"
-                android:textSize="8pt"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:id="@+id/tvAddress"
-                android:textColor="#fff"/>
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="30dp">
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="NUMERO: "
-                android:layout_weight="1"
-                android:gravity="left"
-                android:textColor="#fff"
-                />
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent"
-                android:layout_marginTop="5dp"
-                >
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="22339221"
-                android:textStyle="bold"
-                android:textSize="8pt"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:id="@+id/tvNumber"
-                android:textColor="#fff"/>
-            </TableRow>
-        </TableLayout>
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:background="#449988"
+                android:layout_marginBottom="50dp">
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ITEM: "
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:textColor="#fff"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="358"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/tvItem"
+                        android:textColor="#fff"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NOMBRE: "
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:textColor="#fff"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Carlos Hernandez"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/tvName"
+                        android:textColor="#fff"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="DIRECCION: "
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:textColor="#fff"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Unidad de Propositos"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/tvAddress"
+                        android:textColor="#fff"/>
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="30dp">
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NUMERO: "
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:textColor="#fff"
+                        />
+                </TableRow>
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="5dp"
+                    >
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="22339221"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:id="@+id/tvNumber"
+                        android:textColor="#fff"/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
 

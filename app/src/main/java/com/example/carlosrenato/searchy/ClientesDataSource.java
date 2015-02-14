@@ -48,17 +48,14 @@ public class ClientesDataSource {
         return all;
     }
 
-    public Cursor filtering(String match){
-//        open();
-//        Cursor cur = db.rawQuery("select ITEM as _id, NOMBRE, DIRECCION, NUMERO from clientes where NOMBRE like '"+match+"*';", null);
-        Cursor cur = db.rawQuery("select * from Clientes where NOMBRE like '%"+match+"%';", null);
-        if (cur != null){
-            cur.moveToFirst();
-        }
+    public Cursor getAll(){
+        open();
+        Cursor cur = db.rawQuery("select * from clientes", null);
+        cur.moveToFirst();
         return cur;
     }
 
-    /** Convert cursor to client class**/
+    /** Convert cursor to client object**/
     public Cliente toClient(Cursor cur){
         Cliente cliente = new Cliente();
         cliente.setItem(cur.getInt(cur.getColumnIndexOrThrow("ITEM")));
